@@ -1,58 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        #container {
-            margin-top: 50px;
-        }
-        input {
-            padding: 10px;
-            font-size: 16px;
-            width: 80%;
-            margin-bottom: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <div id="container">
-        <h1>Send a Message</h1>
-        <input type="text" id="message" placeholder="Type your message here..." />
-        <br>
-        <button onclick="sendMessage()">Send</button>
-    </div>
-
+    <title>فرم جمع دو عدد</title>
     <script>
-        function sendMessage() {
-            const message = document.getElementById('message').value;
-            if (message) {
-                Telegram.WebApp.sendData(message); // ارسال متن به ربات
-                alert("Message sent: " + message);
-            } else {
-                alert("Please enter a message.");
-            }
+        function calculateSum() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var sum = num1 + num2;
+            document.getElementById("result").innerHTML = "جمع دو عدد: " + sum;
         }
     </script>
+</head>
+<body>
+    <h1>فرم جمع دو عدد</h1>
+    <label for="num1">عدد اول:</label>
+    <input type="number" id="num1" required><br><br>
+    <label for="num2">عدد دوم:</label>
+    <input type="number" id="num2" required><br><br>
+    <button onclick="calculateSum()">جمع</button>
+    <p id="result"></p>
 </body>
 </html>
